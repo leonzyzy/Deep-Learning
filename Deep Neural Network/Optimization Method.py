@@ -170,17 +170,3 @@ def model(X, Y, layers_dim, optimizer, eta=0.0007, mini_batch_size=64, beta=0.9,
     plt.title("Learning rate = " + str(eta))
     plt.show()
     return params
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,1 +1,2 @@
-# Example of Dataset and DataLoader
+### Example of Dataset and DataLoader </br>
+#### Using Mini-Batch training 

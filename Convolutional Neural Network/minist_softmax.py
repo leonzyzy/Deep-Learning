@@ -1,11 +1,9 @@
 import torch
-import numpy as np
 import torch.optim as optim
 import torch.nn as nn
 from torchvision import transforms
 from torchvision import datasets
 from torch.utils.data import DataLoader
-import matplotlib.pyplot as plt
 
 # define batch size
 batch_size = 100
@@ -62,7 +60,7 @@ model.to(device)
 
 
 # define a training function
-def train(epoch):
+def train(epo):
     running_loss = 0.0
     for batch_id, data in enumerate(train_loader, 0):
         optimizer.zero_grad()
@@ -80,7 +78,7 @@ def train(epoch):
         # print the training process per batch
         running_loss += cost.cpu().item()
         if (batch_id + 1) % 300 == 0:
-            print("epoch: {}, batch id: {}, loss: {}".format(epoch + 1, batch_id + 1, running_loss / 300))
+            print("epoch: {}, batch id: {}, loss: {}".format(epo + 1, batch_id + 1, running_loss / 300))
             running_loss = 0.0  # reset loss into 0 for next batch
 
 
@@ -104,8 +102,9 @@ def test():
             # compute accuracy
             total += labels.size(0)
             correct += (prediction == labels.cpu()).sum().item()
-            accuracy = correct/total
+            accuracy = correct / total
         print('Accuracy on test set: {}'.format(accuracy))
+
 
 # test code
 if __name__ == '__main__':

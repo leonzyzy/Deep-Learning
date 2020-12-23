@@ -112,6 +112,7 @@ def test():
     total_size = 0
     # no grad needs in testing
     with torch.no_grad():
+        model.eval()
         for data in test_loader:
             images, labels = data
             images, labels = images.to(device), labels.to(device)  # put test data into gpu

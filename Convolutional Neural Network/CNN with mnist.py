@@ -64,13 +64,13 @@ class ConvNet(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(2)  # output size: 32 x 7 x 7
         )
-        self.out = nn.Linear(32 * 7 * 7, 10)
+        self.fn = nn.Linear(32 * 7 * 7, 10)
 
     def forward(self, x):
         x = self.Conv1(x)
         x = self.Conv2(x)
         x = x.view(x.size(0), -1)
-        x = self.out(x)
+        x = self.fn(x)
         return x
 
 

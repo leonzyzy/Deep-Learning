@@ -1,4 +1,4 @@
-# Deep Learning
+# Deep Learning with Pytorch
 ## Algorithms Implementation
 #### Topics:
 ##### 1. Introduction PyTorch
